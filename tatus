@@ -1,0 +1,77 @@
+[33mcommit 0f6444d59ab6f5a6d27ad6ba78af17b6b6d88439[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 16:39:07 2018 +0200
+
+    Ajout HTML et inclusions diverses
+
+[33mcommit bef25b452830e1463262b00eb517134179010a0d[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 16:37:27 2018 +0200
+
+    ajout des doubles extensions
+
+[33mcommit 50e8ad975c7e2c8d2614f112ab55b5314758495a[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 16:36:52 2018 +0200
+
+    ecriture du style css
+
+[33mcommit 6430d7c5f4c01ef39aec68d26ac51737a68a65e8[m[33m ([m[1;31morigin/develop[m[33m)[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 16:17:02 2018 +0200
+
+    ecriture fonction callPage
+
+[33mcommit 336c39a34b3b8ce0dc32e31036b73f439afd88a7[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:34:45 2018 +0200
+
+    inclusion du header
+
+[33mcommit c07712ea5a81c325c44e2e6ae10f41feb7610926[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:33:54 2018 +0200
+
+    inclusion du header
+
+[33mcommit 88f214715d34878d4833eaf16f8b7e8cb4a25f2f[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:27:37 2018 +0200
+
+    ajout balise abbr
+
+[33mcommit 4dad12a1b395cc4dfe6c5e4a2bcc8ba713617434[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:21:35 2018 +0200
+
+    inclusion header
+
+[33mcommit b09aa82d99a51d1406e138a25513542be7854e6a[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:20:45 2018 +0200
+
+    ecriture des includes
+
+[33mcommit 402b77cdd71ca6d18e3134cbde91c49a85b675cc[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 14:19:31 2018 +0200
+
+    Ecriture affichage date
+
+[33mcommit 92f3de8eb547b4d1c01f0904e850e46f3b904e30[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 13:56:58 2018 +0200
+
+    ecriture HTML POUR TEST
+
+[33mcommit dc5181e235f87c0f473ce5365bed2dc3b5eff4e7[m
+Author: Bob Marley <bob@marley.com>
+Date:   Wed Apr 4 12:15:03 2018 +0200
+
+    Ecriture Commande echo pour test
+
+[33mcommit 87bca5b8b819ceab1848fe65c391ed54b4c3c1e7[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: GIL66 <gherr@me..com>
+Date:   Wed Apr 4 11:57:02 2018 +0200
+
+    Initial commit
