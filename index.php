@@ -1,3 +1,4 @@
 <?php
-echo "<h1>Coucou</h1>";
-echo "<h2>Hello</h2>;
+include "./includes/header.php";
+
+include "./includes/footer.php";
