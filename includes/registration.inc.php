@@ -46,23 +46,52 @@ include "frmregistration.php";
 }
 else {
 // adresse, utilisateur, mdp, bdd
-$mdp = sha1($mdp); 
+$mdp = sha1($mdp);
+$token = uniqid(sha1(date('Y-m-d|H:m:s')), false);
 $connection = mysqli_connect("localhost", "root", "", "phpdieppe" );
+
 $requete = "INSERT INTO T_USERS
-    (USENAME, USEFIRSTNAME, USEMAIL, USEPASSWORD, ID_ROLE)
-    VALUES ('$nom', '$prenom', '$mail', '$mdp', 3)";
+    (USENAME, USEFIRSTNAME, USEMAIL, USEPASSWORD, ID_ROLE, USETOKEN)
+    VALUES ('$nom', '$prenom', '$mail', '$mdp', 3, '$token')";
 
 if (!$connection) {
 die("Erreur MySQL" . mysqli_connect_errno() . " | " . mysqli_connect_error());
 }
+
+
+
 else {
 
 if(mysqli_query($connection, $requete)) {
     echo "données enregistrées";
+    $id = mysqli_insert_id($connection);
+
+    $messageMail = "<h1>Wunderbar !!!</h1>";
+    $messageMail .= "<p> Vous êtes inscrit !</p>";
+    $messageMail .= "<p>Mais vous devez valider votre inscription.</p>";
+    $messageMail .= "<p><a href='http://localhost/PHP/index.php?page=mailValidation&amp;id=$id&amp;token=$token'>";
+    $messageMail .= "Clique-moi grand fou !";
+    $messageMail .= "</a></p>";
+
+    // email, objet, message.
+    // mail($mail, 'Inscription compte', $messageMail);
+
+    $headers = "From: manu@elysees.fr" . "\r\n" .
+    "Reply-to: doudou@matignon.com" . "\r\n" .
+    "X-Mailer: PHP/" . phpversion();
+
+    mail($mail, 'inscription compte', $messageMail, $headers);
+
 }
 else {
-    echo "Erreur";
-    include "frmregistration.php";
+ 
+
+
+ 
+ 
+ 
+    /*echo "Erreur";
+    include "frmregistration.php";*/
 }
 mysqli_close($connection);
 }
