@@ -1,4 +1,7 @@
-<?php include "./functions/callPage.php"; ?>
+<?php
+session_start();
+echo session_id();
+include "./functions/callPage.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
