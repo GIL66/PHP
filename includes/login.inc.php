@@ -1,21 +1,41 @@
-<h1>Se connecter</h1>
-<form method="post" action="#">
-  <div class="container">
-    <label for="identifiant"><b>identifiant</b></label>
-    <input type="text" placeholder="Entrez un identifiant" name="identifiant" required>
-
-    <label for="mdp"><b>Mot de passe</b></label>
-    <input type="password" placeholder="Entrer mot de passe" name="mdp" required>
-
-    <input type="submit" value="Valider" />
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <input type="submit" value="Annuler"/>
-    <span class="mdp">Mot de passe<a href="#">oublié?</a></span>
-  </div>
-  <input type ="hidden" name="frmregistration" />
-</form>
+<?php
+if (isset($_POST['frmLogin'])) {
+    if (isset($_POST['mail']) && isset($_POST['mdp'])) {
+        $mail = $_POST['mail'];
+        $mdp = $_POST['mdp'];
+        $mdp = sha1($mdp);
+        $connection = mysqli_connect("localhost", "root", "", "phpdieppe");
+        $requeteVerif = "SELECT * FROM T_USERS
+                        WHERE USEMAIL='$mail'
+                        AND USEPASSWORD='$mdp'";
+                
+        if (!$connection) {
+            die("Erreur MySQL " . mysqli_connect_errno() . " | " . mysqli_connect_error());
+        }
+        else {
+            if ($resultatRequete = mysqli_query($connection, $requeteVerif)) {
+                $nbrResultats = mysqli_num_rows($resultatRequete);
+                if ($nbrResultats > 0) {
+                    $_SESSION['login'] = 1;
+                    
+                }
+                else {
+                    $_SESSION['login'] = 0;
+                    echo "Essaie encore";
+                }
+                mysqli_free_result($resultatRequete);
+            }
+            else {
+                echo "Ach !!! Gros problème de requête !!!";
+            }
+            mysqli_close($connection);
+        }
+    }
+    else {
+        echo "Mmmm, truc qui merdouille dans le formulaire";
+        include "frmLogin.php";        
+    }
+}
+else {
+    include "frmLogin.php";
+}
