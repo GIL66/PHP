@@ -14,26 +14,25 @@ if (isset($_POST['frmLogin'])) {
         }
         else {
             if ($resultatRequete = mysqli_query($connection, $requeteVerif)) {
-                $nbrResultats = mysqli_num_rows($resultatRequete);
-                if ($nbrResultats > 0) {
-                    $_SESSION['login'] = 1;
+                if (mysqli_num_rows($resultatRequete) > 0) {
+                    while($row = mysqli_fetch_assoc($resultatRequete)) {
+                        $nom = $row['USENAME'];
+                        $prenom = $row['USEFIRSTNAME'];
+                    }
                     
+                    $_SESSION['login'] = 1;
+                    $_SESSION['nom'] = $nom;
+                    $_SESSION['prenom'] = $prenom;
                 }
                 else {
                     $_SESSION['login'] = 0;
                     echo "Essaie encore";
                 }
                 mysqli_free_result($resultatRequete);
+            
+                mysqli_close($connection);
             }
-            else {
-                echo "Ach !!! Gros problème de requête !!!";
-            }
-            mysqli_close($connection);
         }
-    }
-    else {
-        echo "Mmmm, truc qui merdouille dans le formulaire";
-        include "frmLogin.php";        
     }
 }
 else {
