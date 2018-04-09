@@ -21,7 +21,6 @@ if (isset($_GET['id']) && isset($_GET['token'])) {
                 $requeteUpdate = "UPDATE T_USERS
                                 SET USEVERIF=1
                                 WHERE ID_USER=$id";
-                                
                 if (mysqli_query($connection, $requeteUpdate)) {
                     echo "Inscription validée";
                 }
